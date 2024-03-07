@@ -15,6 +15,7 @@ public class Wallride : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
+
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Wallride : MonoBehaviour
 
     private void wallRide()
     {
-        //float originalGravity = rb.gravityScale;
+        
         if (Input.GetKeyDown(KeyCode.E) && isWalled == true)
         {
             StartCoroutine(Wallide());
@@ -59,7 +60,6 @@ public class Wallride : MonoBehaviour
         rb.gravityScale = 0.1f;
         rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
         yield return new WaitForSeconds(wallTime);
-        //rb.gravityScale = 0.1f;
         //rb.gravityScale = originalGravity;    
     }
 }

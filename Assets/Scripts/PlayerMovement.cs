@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetKeyDown (KeyCode.LeftAlt) && canDash)
+        if (Input.GetKeyDown (KeyCode.R) && canDash)
         {
             StartCoroutine(Dash());
         }
@@ -101,6 +101,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
      }
+    
+
+    //Code mp
 
     void Jump()
         {

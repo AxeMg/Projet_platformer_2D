@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7818752884605298743}
   - component: {fileID: 2921795228973655584}
   - component: {fileID: 3122813152110991177}
+  - component: {fileID: 4186862430620047430}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: TriggerDeath
@@ -149,3 +150,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4186862430620047430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746455846934859299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475b44f970195da4fab65412b6b7631e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

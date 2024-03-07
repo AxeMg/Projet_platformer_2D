@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -45,7 +46,9 @@ public class Turret : MonoBehaviour
     void Shoot()
     {
         GameObject clone = Instantiate(_projectile, barrel.position, transform.rotation);
-        clone.GetComponent<Rigidbody2D>().AddForce(transform.forward * bulletSpeed);
+        clone.GetComponent<Rigidbody2D>().AddForce(transform.forward * bulletSpeed);       
         Destroy(clone, 3);
     }
+    
+    
 }

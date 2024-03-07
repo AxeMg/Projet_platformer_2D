@@ -25,4 +25,10 @@ public class TriggerDeath : MonoBehaviour
             transform.position = respawnPoint;
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector2(100,100));
+    }
 }
