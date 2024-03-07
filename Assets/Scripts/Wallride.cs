@@ -49,6 +49,7 @@ public class Wallride : MonoBehaviour
         }
         if (isWalled == false)
         {
+            StopCoroutine(Wallide());
             rb.gravityScale = 5f;
         }
     }

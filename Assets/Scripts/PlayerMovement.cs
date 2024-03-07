@@ -10,14 +10,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float JumpPower = 12f;
     [SerializeField] private float gravityScale;
     [SerializeField] private float fallGravityScale = 15;
-    [SerializeField] bool IsGrounded;
+    //[SerializeField] bool IsGrounded;
     [SerializeField] private bool canDash = true;
+    [SerializeField] private LayerMask jumpableGround;
     private bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 0.1f;
     private Vector3 respawnPoint;
     Rigidbody2D rb;
+    BoxCollider2D coll;
     Vector2 move;
 
 
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         respawnPoint = transform.position;
     }
 
@@ -35,21 +38,9 @@ public class PlayerMovement : MonoBehaviour
         Keybind();
     }
 
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private bool IsGrounded()
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGrounded = false;
-        }
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -71,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump
 
         
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
             Jump();
                 
@@ -104,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        //rb.AddForce(Vector2.right * dashingPower, ForceMode2D.Impulse);
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;

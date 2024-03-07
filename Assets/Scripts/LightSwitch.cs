@@ -8,6 +8,7 @@ public class LightSwitch : MonoBehaviour
     public GameObject RED;
     public GameObject GREEN;
     private bool lightActive;
+
     // Start is called before the first frame update
     void Start()
     {
