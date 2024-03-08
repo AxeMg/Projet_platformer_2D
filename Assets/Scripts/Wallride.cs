@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Wallride : MonoBehaviour
 {
-    [SerializeField] bool isWalled;
-    private float wallSpeed = 9f;
-    private float wallTime = 2f;
+    [SerializeField] private bool isWalled;
+    [SerializeField] private float wallSpeed = 10f;
+    [SerializeField] private float wallTime = 1.5f;
+    private float gravitySave;
     Rigidbody2D rb;
+    
 
-
-    // Start is called before the first frame update
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        gravitySave = rb.gravityScale;
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         wallRide();
@@ -43,23 +44,27 @@ public class Wallride : MonoBehaviour
 
     private void wallRide()
     {
-        
         if (Input.GetKeyDown(KeyCode.E) && isWalled == true)
         {
             StartCoroutine(Wallide());
+            
         }
         if (isWalled == false)
         {
             StopCoroutine(Wallide());
-            rb.gravityScale = 5f;
+            rb.gravityScale = gravitySave;
         }
+
+
+
     }
     IEnumerator Wallide()
     {
-        float originalGravity = rb.gravityScale;
         rb.gravityScale = 0.1f;
         rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
         yield return new WaitForSeconds(wallTime);
-        //rb.gravityScale = originalGravity;    
+        rb.gravityScale = gravitySave;
+
+        
     }
 }
