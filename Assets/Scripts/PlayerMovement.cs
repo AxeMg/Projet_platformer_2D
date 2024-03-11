@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+//using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash Key
 
-        if (Input.GetKeyDown(KeyCode.R) && canDash)
+        if (Input.GetKeyDown(KeyCode.A) && canDash)
         {
             StartCoroutine(Dash());
             

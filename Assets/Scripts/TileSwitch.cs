@@ -1,6 +1,6 @@
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.SocialPlatforms.GameCenter;
+//using UnityEngine.SocialPlatforms.GameCenter;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 using UnityEngine;
