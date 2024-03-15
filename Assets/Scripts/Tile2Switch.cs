@@ -34,6 +34,7 @@ public class TileSwitch2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            /*
             if (lightActive)
             {
                 lightSwitch.SetActive(true);
@@ -45,6 +46,7 @@ public class TileSwitch2 : MonoBehaviour
             lightActive = !lightActive;
             tileMap2.enabled = !tileMap2.enabled;
             tileCo2.enabled = !tileCo2.enabled;
+            */
         }
     }
 }

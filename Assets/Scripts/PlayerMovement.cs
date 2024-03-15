@@ -110,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
+
         
         //Flip
         if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
@@ -120,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
+
     //---------------------Dash coroutine-------------------
 
     IEnumerator Dash()

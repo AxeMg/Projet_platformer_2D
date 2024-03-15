@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Lights
   - TriggerDeath
+  - AntiStuckBox
   layers:
   - Default
   - TransparentFX

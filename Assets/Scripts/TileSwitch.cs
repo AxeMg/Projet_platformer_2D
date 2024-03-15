@@ -7,51 +7,61 @@ using UnityEngine;
 
 public class TileSwitch : MonoBehaviour
 {
-    private TilemapRenderer tileMap;
-    private TilemapCollider2D tileCo;
-    private bool lightActive ;
-    public GameObject lightSwitch2;
+
+    public GameObject Light_red;
+    public GameObject Light_green;
+    private bool solActive ;
+    public GameObject Sol_1;
+    public GameObject Sol_2;
 
     // Start is called before the first frame update
     void Start()
     {
-        tileMap = GetComponent<TilemapRenderer>();
-        tileCo = GetComponent<TilemapCollider2D>();
+        Sol_1.SetActive(true);
+        Light_green.SetActive(true);
+        Sol_2.SetActive(false);
+        Light_red.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Mecha();
+        Key();
+
+        
     }
 
-    public void Mecha()
+    private void Mecha()
 
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            if (lightActive)
-            {
-                lightSwitch2.SetActive(false);
-            }
-            else
-            {
-                lightSwitch2.SetActive(true);
-            }
-            lightActive = !lightActive;
-            tileMap.enabled = !tileMap.enabled;
-            tileCo.enabled = !tileCo.enabled;
-        }
-/*
-        if (reality == true)
-        {
-            tileMap.enabled = true;
-        }
 
-        if (reality == false) 
-        { 
-            tileMap.enabled = false; ;
+
+        if (solActive)
+        {
+            Sol_1.SetActive(true);
+            Light_green.SetActive(true);
+            Sol_2.SetActive(false);
+            Light_red.SetActive(false);
+            }
+        else
+        {
+            Sol_1.SetActive(false);
+            Light_green.SetActive(false);
+            Sol_2.SetActive(true);
+            Light_red.SetActive(true);
         }
-*/
+            
+        solActive = !solActive;
+
+
     }
+
+    private void Key()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Mecha();
+        }
+    }
+
 }

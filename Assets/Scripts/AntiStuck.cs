@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class TriggerDeath : MonoBehaviour
+public class AntiStuck : MonoBehaviour
 {
-    private Vector3 respawnPoint;
+
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        respawnPoint = transform.position;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,10 +21,9 @@ public class TriggerDeath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("TriggerDeath"))
+        if(other.gameObject.CompareTag("AntiStuckBox"))
         {
-            transform.position = respawnPoint;
+            rb.velocity = new Vector2(transform.localScale.y * 4, 0f);
         }
     }
-
 }
