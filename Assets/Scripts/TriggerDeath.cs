@@ -24,6 +24,10 @@ public class TriggerDeath : MonoBehaviour
         {
             transform.position = respawnPoint;
         }
+        else if(other.gameObject.CompareTag("Checkpoint"))
+        {
+            respawnPoint = transform.position;
+        }
     }
 
 }

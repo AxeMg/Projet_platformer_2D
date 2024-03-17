@@ -9,6 +9,7 @@ TagManager:
   - Lights
   - TriggerDeath
   - AntiStuckBox
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
