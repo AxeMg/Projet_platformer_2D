@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D coll;
     Vector2 move;
 
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+
     //-----------------------------------------------------------------
 
     //----------------------------------------------------------
@@ -79,8 +83,17 @@ public class PlayerMovement : MonoBehaviour
 
         //Jump key
 
+        if(IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
+        if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f)
+        //if (Input.GetKeyDown(KeyCode.UpArrow) && coyoteTimeCounter > 0f)
         {
             Jump();
 
@@ -88,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash Key
 
-        if (Input.GetKeyDown(KeyCode.A) && canDash)
+        if (Input.GetKeyDown(KeyCode.W) && canDash)
         {
             StartCoroutine(Dash());
             
@@ -147,16 +160,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
     }
-            /*
-            if (rb.velocity.y > 0)
-            {
-                rb.gravityScale = gravityScale;
-            }
-            else
-            {
-                rb.gravityScale = fallGravityScale;
-            }
-            */
 
     //----------------Wallride coroutine--------------  
 

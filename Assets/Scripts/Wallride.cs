@@ -44,8 +44,9 @@ public class Wallride : MonoBehaviour
 
     private void wallRide()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && isWalled == true)
+        if (Input.GetKeyDown(KeyCode.Q) && isWalled == true)
         {
+            Debug.Log("Wallride");
             StartCoroutine(Wallide());
             
         }
