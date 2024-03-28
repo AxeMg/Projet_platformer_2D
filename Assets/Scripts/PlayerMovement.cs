@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //-----------------------------------------------------
 
+    public Wallride wallride;
+
     [SerializeField] private float Speed = 9f;
     [SerializeField] private float JumpPower = 12f;
     [SerializeField] private float gravityScale;
@@ -48,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Keybind();
+        test();
     }
 
     //-------------IsGounded function--------------------------------------
@@ -101,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash Key
 
-        if (Input.GetKeyDown(KeyCode.W) && canDash)
+        if (Input.GetButtonDown("Dash") && canDash)
         {
             StartCoroutine(Dash());
             
@@ -162,10 +165,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //----------------Wallride coroutine--------------  
-
+    void test()
+    {
+        wallride.wallRide();
+    }
     //-------------------------------------------------
 
-    
+
 
 
 }

@@ -2801,6 +2801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae8914f3dcbc2f4680763360514526f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallride: {fileID: 848317148}
   Speed: 9
   JumpPower: 16
   gravityScale: 5

@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: 28871ce44cdab2c4abbdcacaba4a87fc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Planche_asset_test_0
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 676
+        width: 604
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f17ad60049bda841af5877b9160dd09
+      internalID: 1933856578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_2
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 610
+        width: 339
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fa9accd71d9ba4b8addbaa12f0de3a
+      internalID: -1065585040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 759
+        width: 728
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d01c7a2fa77b334b86ae6ab6060e53d
+      internalID: -425440497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_17
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 340
+        width: 384
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396d9bfb71d505849b429543deda2f8f
+      internalID: 1242397288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_18
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 458
+        width: 512
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8153e08c2cbe864c87d4f6ec7832e78
+      internalID: -1000246477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_20
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 168
+        width: 684
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba6d78266b196b40becbd09df3fda46
+      internalID: 267704023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_21
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 486
+        width: 463
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ec4b590e1af6d41965b64fb1054f4a
+      internalID: 1860417908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_26
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 288
+        width: 463
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0064a2cf737e40a4eac724c0b5efaa39
+      internalID: 745226106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_30
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 276
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f885af0525f383346aa62bd0de112aa0
+      internalID: 1770444626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_32
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 33
+        width: 540
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6227a2ebccf6cf04ba95766c5a5f761f
+      internalID: -88819208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_asset_test_39
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 150
+        width: 463
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92da1c8ff8f9711408648b35c6769c39
+      internalID: -597937722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 78b86c0abe68ca94e90c6c822fa92d32
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Planche_asset_test_0: 1933856578
+      Planche_asset_test_1: -1607146649
+      Planche_asset_test_10: -425440497
+      Planche_asset_test_11: -64687922
+      Planche_asset_test_12: 1382129311
+      Planche_asset_test_13: -2051449951
+      Planche_asset_test_14: 238899374
+      Planche_asset_test_15: 1396024157
+      Planche_asset_test_16: -599476335
+      Planche_asset_test_17: 1242397288
+      Planche_asset_test_18: -1000246477
+      Planche_asset_test_19: -1089016598
+      Planche_asset_test_2: -1065585040
+      Planche_asset_test_20: 267704023
+      Planche_asset_test_21: 1860417908
+      Planche_asset_test_22: 1924299739
+      Planche_asset_test_23: 51727214
+      Planche_asset_test_24: -1046072199
+      Planche_asset_test_25: 87582363
+      Planche_asset_test_26: 745226106
+      Planche_asset_test_27: 1874608301
+      Planche_asset_test_28: 761684046
+      Planche_asset_test_29: 1592513965
+      Planche_asset_test_3: -923976517
+      Planche_asset_test_30: 1770444626
+      Planche_asset_test_31: 1060290200
+      Planche_asset_test_32: -88819208
+      Planche_asset_test_33: 1029055952
+      Planche_asset_test_34: 1465190779
+      Planche_asset_test_35: -1497875332
+      Planche_asset_test_36: 1703416378
+      Planche_asset_test_37: 1887874279
+      Planche_asset_test_38: -1620932948
+      Planche_asset_test_39: -597937722
+      Planche_asset_test_4: 613291649
+      Planche_asset_test_40: -754637561
+      Planche_asset_test_41: 976650887
+      Planche_asset_test_42: 662521605
+      Planche_asset_test_43: -1872257302
+      Planche_asset_test_44: -687236471
+      Planche_asset_test_45: -322307859
+      Planche_asset_test_46: -1226449579
+      Planche_asset_test_5: -368760044
+      Planche_asset_test_6: 1843258545
+      Planche_asset_test_7: 1494769660
+      Planche_asset_test_8: 1090661862
+      Planche_asset_test_9: -1210332285
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

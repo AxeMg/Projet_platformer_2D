@@ -22,7 +22,7 @@ public class Wallride : MonoBehaviour
     
     void Update()
     {
-        wallRide();
+        //wallRide();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,9 +42,9 @@ public class Wallride : MonoBehaviour
     }
 
 
-    private void wallRide()
+    public void wallRide()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && isWalled == true)
+        if (Input.GetButtonDown("Wallride") && isWalled == true)
         {
             Debug.Log("Wallride");
             StartCoroutine(Wallide());
