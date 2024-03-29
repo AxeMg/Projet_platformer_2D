@@ -13,19 +13,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float JumpPower = 12f;
     [SerializeField] private float gravityScale;
     //[SerializeField] private float fallGravityScale = 15;
-    [SerializeField] private bool canDash = true;
     [SerializeField] private LayerMask jumpableGround;
 
-    //[SerializeField] private bool isWalled;
-    //[SerializeField] private float wallSpeed = 10f;
-    //[SerializeField] private float wallTime = 1.5f;
+    [SerializeField] private bool isWalled;
+    [SerializeField] private float wallSpeed = 10f;
+    [SerializeField] private float wallTime = 1.5f;
 
     private bool isDashing;
+    [SerializeField] private bool canDash = true;
     [SerializeField] private float dashingPower = 100f;
     [SerializeField] private float dashingTime = 1f;
     private float dashingCooldown = 0.1f;
+
     private float gravitySave;
-    private Vector3 respawnPoint;
     Rigidbody2D rb;
     BoxCollider2D coll;
     Vector2 move;
@@ -43,15 +43,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         gravitySave = rb.gravityScale;
-        respawnPoint = transform.position;
     }
 
 
     void Update()
     {
         Keybind();
-        test();
     }
+
+
 
     //-------------IsGounded function--------------------------------------
 
@@ -59,18 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-    //--------------------------------------------------------------------
-
-    //-------------Death function------------------------------------------
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("TriggerDeath"))
-        {
-            transform.position = respawnPoint;
-        }
-    }
-
+ 
     //---------------------------------------------------------------------------
 
     //-------------Keybind assignation---------------------------------------------------
@@ -96,7 +85,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f)
-        //if (Input.GetKeyDown(KeyCode.UpArrow) && coyoteTimeCounter > 0f)
         {
             Jump();
 
@@ -113,30 +101,43 @@ public class PlayerMovement : MonoBehaviour
 
         LateralMovment();
 
-    //---------------------------------------------------------------------
+        //Wallride key
+
+        if (Input.GetButtonDown("Wallride") && isWalled)
+        {
+            Debug.Log("Wallride");
+            StartCoroutine(Wallide());
+
+        }
+        
+
+
+        //---------------------------------------------------------------------
+
+       
+        
+
+    }
 
     //------------------Left & Right Movement------------------------------
 
     void LateralMovment()
     {
-            if (isDashing)
-            {
-                return;
-            }
+        if (isDashing)
+        {
+            return;
+        }
 
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
 
-        
+
         //Flip
         if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
         if (move.x > 0.01f) transform.localScale = new Vector3(1, 1, 1);
     }
-    
-    //-----------------------------------------------------------------
-        
 
-    }
+    //-----------------------------------------------------------------
 
     //---------------------Dash coroutine-------------------
 
@@ -165,13 +166,57 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //----------------Wallride coroutine--------------  
-    void test()
+   
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        wallride.wallRide();
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            isWalled = true;
+        }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            isWalled = false;
+            StopCoroutine(Wallide());
+           //rb.gravityScale = gravitySave;
+        }
+    }
+
+    /*
+    public void wallRide()
+    {
+        if (Input.GetButtonDown("Wallride") && isWalled == true)
+        {
+            Debug.Log("Wallride");
+            StartCoroutine(Wallide());
+
+        }
+        if (isWalled == false)
+        {
+            StopCoroutine(Wallide());
+            rb.gravityScale = gravitySave;
+        }
+
+
+
+    }
+    */
+    IEnumerator Wallide()
+    {
+        rb.gravityScale = 0.1f;
+        rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
+        yield return new WaitForSeconds(wallTime);
+        rb.gravityScale = gravitySave;
+
+
+    }
+}
     //-------------------------------------------------
 
 
 
 
-}
