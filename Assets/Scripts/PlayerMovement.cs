@@ -7,30 +7,28 @@ public class PlayerMovement : MonoBehaviour
 {
     //-----------------------------------------------------
 
-    public Wallride wallride;
-
     [SerializeField] private float Speed = 9f;
     [SerializeField] private float JumpPower = 12f;
     [SerializeField] private float gravityScale;
-    //[SerializeField] private float fallGravityScale = 15;
     [SerializeField] private LayerMask jumpableGround;
 
     [SerializeField] private bool isWalled;
-    [SerializeField] private float wallSpeed = 10f;
+    private bool isAttach;
+    [SerializeField] private float wallSpeed;
     [SerializeField] private float wallTime = 1.5f;
 
     private bool isDashing;
-    [SerializeField] private bool canDash = true;
+    private bool canDash = true;
     [SerializeField] private float dashingPower = 100f;
     [SerializeField] private float dashingTime = 1f;
-    private float dashingCooldown = 0.1f;
+    [SerializeField] private float dashingCooldown = 0.5f;
 
     private float gravitySave;
     Rigidbody2D rb;
     BoxCollider2D coll;
     Vector2 move;
 
-    private float coyoteTime = 0.2f;
+    [SerializeField] private float coyoteTime = 0.05f;
     private float coyoteTimeCounter;
 
 
@@ -81,23 +79,22 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            coyoteTimeCounter -= Time.deltaTime;
+            coyoteTimeCounter -= Time.deltaTime;  
         }
 
         if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f)
         {
             Jump();
-
         }
 
         //Dash Key
 
         if (Input.GetButtonDown("Dash") && canDash)
         {
-            StartCoroutine(Dash());
-            
+            Debug.Log("Dash");
+            StartCoroutine(Dash());  
         }
-        //Lateral movment
+        //Deplacment Key
 
         LateralMovment();
 
@@ -107,23 +104,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Wallride");
             StartCoroutine(Wallide());
-
-        }
-        
-
-
-        //---------------------------------------------------------------------
-
-       
-        
-
+        }  
     }
+
+    //---------------------------------------------------------------------
 
     //------------------Left & Right Movement------------------------------
 
     void LateralMovment()
     {
-        if (isDashing)
+        if (isDashing || isAttach)
         {
             return;
         }
@@ -162,10 +152,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+        Debug.Log("Saute");
+        rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);   
     }
 
-    //----------------Wallride coroutine--------------  
+    //----------------Wallride Mechanic--------------  
    
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -180,37 +171,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
+            Debug.Log("Je sors du mur");
             isWalled = false;
             StopCoroutine(Wallide());
-           //rb.gravityScale = gravitySave;
-        }
-    }
-
-    /*
-    public void wallRide()
-    {
-        if (Input.GetButtonDown("Wallride") && isWalled == true)
-        {
-            Debug.Log("Wallride");
-            StartCoroutine(Wallide());
-
-        }
-        if (isWalled == false)
-        {
-            StopCoroutine(Wallide());
             rb.gravityScale = gravitySave;
+            isAttach = false;
         }
-
-
-
     }
-    */
+
     IEnumerator Wallide()
     {
+        Debug.Log("Debut wallride");
+        isAttach = true;
         rb.gravityScale = 0.1f;
-        rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
+        rb.velocity = new Vector2(move.x * wallSpeed, 0f);
+        //rb.velocity = new Vector2(transform.localScale.x * Speed * wallSpeed, 0f);
         yield return new WaitForSeconds(wallTime);
-        rb.gravityScale = gravitySave;
+        yield break;
+        //rb.gravityScale = gravitySave;
+        //isAttach = false;
+        //Debug.Log("Fin wallride");
 
 
     }

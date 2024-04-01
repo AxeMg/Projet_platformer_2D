@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class TileSwitch : MonoBehaviour
 {
-
+    [SerializeField] ShakeCamera shakeCamera;
     public GameObject Light_red;
     public GameObject Light_green;
     private bool solActive ;
@@ -27,15 +27,11 @@ public class TileSwitch : MonoBehaviour
     void Update()
     {
         Key();
-
-        
     }
 
     private void Mecha()
 
     {
-
-
         if (solActive)
         {
             Sol_1.SetActive(true);
@@ -53,13 +49,13 @@ public class TileSwitch : MonoBehaviour
             
         solActive = !solActive;
 
-
     }
 
     private void Key()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("SwitchPlatform"))
         {
+            shakeCamera.ScreenShake();
             Mecha();
         }
     }

@@ -12,7 +12,7 @@ public class LightSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        RED.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,9 +21,9 @@ public class LightSwitch : MonoBehaviour
         Switch();
     }
 
-    void Switch()
+    private void Switch()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("SwitchPlatform"))
         {
             if (lightActive)
             {
