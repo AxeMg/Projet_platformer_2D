@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Jump key
 
-        if(IsGrounded())
+        if(IsGrounded() || isAttach)
         {
             coyoteTimeCounter = coyoteTime;
         }
@@ -82,9 +82,10 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;  
         }
 
-        if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f)
+        if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f )
         {
             Jump();
+            isAttach = false;
         }
 
         //Dash Key
