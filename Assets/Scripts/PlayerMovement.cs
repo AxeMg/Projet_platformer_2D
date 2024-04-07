@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isAttach;
     [SerializeField] private float wallSpeed;
     [SerializeField] private float wallTime = 1.5f;
+    private bool canWall = true;
 
     private bool isDashing;
     private bool canDash = true;
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.05f;
     private float coyoteTimeCounter;
 
+    public Animator animator;
+    private float horizontalMove = 0f;
 
     //-----------------------------------------------------------------
 
@@ -76,10 +79,12 @@ public class PlayerMovement : MonoBehaviour
         if(IsGrounded() || isAttach)
         {
             coyoteTimeCounter = coyoteTime;
+            animator.SetBool("Jump", false);
         }
         else
         {
-            coyoteTimeCounter -= Time.deltaTime;  
+            coyoteTimeCounter -= Time.deltaTime;
+            animator.SetBool("Jump", true);
         }
 
         if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f )
@@ -101,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Wallride key
 
-        if (Input.GetButtonDown("Wallride") && isWalled)
+        if (Input.GetButtonDown("Wallride") && isWalled && canWall)
         {
             Debug.Log("Wallride");
             StartCoroutine(Wallide());
@@ -119,8 +124,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+
+
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        horizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
+        
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
 
         //Flip
@@ -154,6 +164,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         Debug.Log("Saute");
+
         rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);   
     }
 
@@ -165,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             isWalled = true;
+            
         }
     }
 
@@ -177,17 +189,19 @@ public class PlayerMovement : MonoBehaviour
             StopCoroutine(Wallide());
             rb.gravityScale = gravitySave;
             isAttach = false;
+            canWall = true;
         }
     }
 
     IEnumerator Wallide()
     {
         Debug.Log("Debut wallride");
+        canWall = false;
         isAttach = true;
-        rb.gravityScale = 0.1f;
-        rb.velocity = new Vector2(move.x * wallSpeed, 0f);
-        //rb.velocity = new Vector2(transform.localScale.x * Speed * wallSpeed, 0f);
+        rb.gravityScale = 0.4f;
+        rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
         yield return new WaitForSeconds(wallTime);
+        canWall = true;
         yield break;
         //rb.gravityScale = gravitySave;
         //isAttach = false;
