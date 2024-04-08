@@ -494,7 +494,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d11f690fbaeaf7b49b67fd1a603d3045, type: 2}
+  - {fileID: 2100000, guid: 36042e5481ac1914a9ccf469188ac620, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1869,7 +1869,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d11f690fbaeaf7b49b67fd1a603d3045, type: 2}
+  - {fileID: 2100000, guid: 42914f7482a42954d972f14765cd5ba6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7538,6 +7538,7 @@ GameObject:
   - component: {fileID: 960475900}
   - component: {fileID: 960475902}
   - component: {fileID: 960475901}
+  - component: {fileID: 960475903}
   m_Layer: 0
   m_Name: Sol_Inter
   m_TagString: Untagged
@@ -7577,8 +7578,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeCamera: {fileID: 960475901}
+  dissolve: {fileID: 960475903}
   Light_red: {fileID: 593376874}
   Light_green: {fileID: 1150251930}
+  solActive: 0
   Sol_1: {fileID: 227956576}
   Sol_2: {fileID: 691259303}
 --- !u!114 &960475901
@@ -7648,6 +7651,24 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &960475903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960475898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e3588fa0467004ea14ef32fd26b62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialSol1: {fileID: 2100000, guid: 36042e5481ac1914a9ccf469188ac620, type: 2}
+  materialSol2: {fileID: 2100000, guid: 42914f7482a42954d972f14765cd5ba6, type: 2}
+  dissolveAmount: 0
+  dissolveAmount2: 0
+  isDissolving: 0
+  isDissolving2: 0
 --- !u!1 &974448274
 GameObject:
   m_ObjectHideFlags: 0
@@ -131360,6 +131381,7 @@ GameObject:
   - component: {fileID: 2052132878}
   - component: {fileID: 2052132877}
   - component: {fileID: 2052132879}
+  - component: {fileID: 2052132880}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -131446,6 +131468,18 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 652.776, y: -87.45325, z: -896.2262}
+--- !u!114 &2052132880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052132876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069956229
 GameObject:
   m_ObjectHideFlags: 0
@@ -131709,6 +131743,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.67591065
+      objectReference: {fileID: 0}
+    - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67591065
+      objectReference: {fileID: 0}
+    - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.67591065
+      objectReference: {fileID: 0}
+    - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1473064
       objectReference: {fileID: 0}
@@ -131720,7 +131769,7 @@ PrefabInstance:
     - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.66
+      value: 5.5943
       objectReference: {fileID: 0}
     - target: {fileID: 922279255605702902, guid: 1e56f4f810955bb4f8dfad9cb465519b,
         type: 3}

@@ -161,8 +161,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Saute");
-
         rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);   
     }
 

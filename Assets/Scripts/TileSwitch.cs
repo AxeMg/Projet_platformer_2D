@@ -8,9 +8,10 @@ using UnityEngine;
 public class TileSwitch : MonoBehaviour
 {
     [SerializeField] ShakeCamera shakeCamera;
+    public Dissolve dissolve;
     public GameObject Light_red;
     public GameObject Light_green;
-    private bool solActive ;
+    [SerializeField] private bool solActive ;
     public GameObject Sol_1;
     public GameObject Sol_2;
 
@@ -35,20 +36,25 @@ public class TileSwitch : MonoBehaviour
         if (solActive)
         {
             Sol_1.SetActive(true);
+            dissolve.StartDissolve(3f);
             Light_green.SetActive(true);
             Sol_2.SetActive(false);
+            dissolve.StopDissolve2(3f);
             Light_red.SetActive(false);
-            }
+        }
+
         else
         {
             Sol_1.SetActive(false);
+            dissolve.StopDissolve(3f);
             Light_green.SetActive(false);
             Sol_2.SetActive(true);
+            dissolve.StartDissolve2(3f);
             Light_red.SetActive(true);
         }
             
         solActive = !solActive;
-
+        
     }
 
     private void Key()
