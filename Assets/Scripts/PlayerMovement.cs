@@ -35,9 +35,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private float horizontalMove = 0f;
 
+    public Ghost ghost;
+
     //-----------------------------------------------------------------
 
-    //----------------------------------------------------------
+    //--------------Start--------------------------------------------
 
     void Start()
     {
@@ -46,13 +48,10 @@ public class PlayerMovement : MonoBehaviour
         gravitySave = rb.gravityScale;
     }
 
-
     void Update()
     {
         Keybind();
     }
-
-
 
     //-------------IsGounded function--------------------------------------
 
@@ -68,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
     void Keybind()
 
     {
-        
         if(isDashing)
         {
             return;
@@ -124,14 +122,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-
-
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
         
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
 
         //Flip
         if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
@@ -148,13 +143,16 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb.gravityScale = 0f;
+        ghost.makeGhost = true;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
+        ghost.makeGhost = false;
         rb.gravityScale = gravitySave;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-     }
+        
+    }
 
     //--------------------------------------------------------
 
@@ -176,7 +174,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             isWalled = true;
-            
         }
     }
 
@@ -203,11 +200,6 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(wallTime);
         canWall = true;
         yield break;
-        //rb.gravityScale = gravitySave;
-        //isAttach = false;
-        //Debug.Log("Fin wallride");
-
-
     }
 }
     //-------------------------------------------------
