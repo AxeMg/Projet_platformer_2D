@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Ghost ghost;
 
+    [SerializeField] private AudioClip jumpSoundClip;
+    [SerializeField] private AudioClip dashSoundClip;
+    [SerializeField] private AudioClip landSoundClip;
+
     //-----------------------------------------------------------------
 
     //--------------Start--------------------------------------------
@@ -59,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
- 
+
     //---------------------------------------------------------------------------
 
     //-------------Keybind assignation---------------------------------------------------
@@ -77,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if(IsGrounded() || isAttach)
         {
             coyoteTimeCounter = coyoteTime;
+            
             animator.SetBool("Jump", false);
         }
         else
@@ -96,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Dash") && canDash)
         {
             Debug.Log("Dash");
+            SoundFXManager.instance.PlaySoundEffectClip(dashSoundClip, transform, 1f);
             StartCoroutine(Dash());  
         }
         //Deplacment Key
@@ -161,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        SoundFXManager.instance.PlaySoundEffectClip(jumpSoundClip, transform, 1f);
         rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);   
     }
 
