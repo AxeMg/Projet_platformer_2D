@@ -1490,7 +1490,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.64, y: -59.91, z: -10.18}
+  m_LocalPosition: {x: 10.08, y: -41.91, z: -10.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3135,7 +3135,7 @@ Transform:
   m_GameObject: {fileID: 848317142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.64, y: -59.91, z: -0.18}
+  m_LocalPosition: {x: 10.08, y: -41.91, z: -0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3172,7 +3172,7 @@ MonoBehaviour:
   ghost: {fileID: 848317152}
   jumpSoundClip: {fileID: 8300000, guid: decbb6fbecef5334f8d457754998496a, type: 3}
   dashSoundClip: {fileID: 8300000, guid: 561519a52c4ef054688ba7fa3932402d, type: 3}
-  landSoundClip: {fileID: 0}
+  landSoundClip: {fileID: 8300000, guid: 5378fbb726dd464449f41f7c4736fd10, type: 3}
 --- !u!50 &848317147
 Rigidbody2D:
   serializedVersion: 4
@@ -130706,7 +130706,7 @@ Transform:
   m_GameObject: {fileID: 2052132876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.64, y: -59.91, z: -10.18}
+  m_LocalPosition: {x: 10.08, y: -41.91, z: -10.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

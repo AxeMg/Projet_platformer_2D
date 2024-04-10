@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if(IsGrounded() || isAttach)
         {
             coyoteTimeCounter = coyoteTime;
-            
+            //SoundFXManager.instance.PlaySoundEffectClip(landSoundClip, transform, 1f);
             animator.SetBool("Jump", false);
         }
         else

@@ -56,7 +56,7 @@ public class TileSwitch : MonoBehaviour
             Light_red.SetActive(true);
         }
             
-        solActive = !solActive;
+        solActive =! solActive;
         
     }
 
