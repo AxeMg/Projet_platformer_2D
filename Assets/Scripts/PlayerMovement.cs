@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(IsGrounded() || isAttach)
         {
+            Debug.Log("Je suis ground");
             coyoteTimeCounter = coyoteTime;
             //SoundFXManager.instance.PlaySoundEffectClip(landSoundClip, transform, 1f);
             animator.SetBool("Jump", false);
@@ -92,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("JumpCustom") && coyoteTimeCounter > 0f )
         {
+            Debug.Log("Sauuute");
             Jump();
             isAttach = false;
         }
