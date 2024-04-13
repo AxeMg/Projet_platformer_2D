@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip dashSoundClip;
     [SerializeField] private AudioClip landSoundClip;
 
+    public GameObject direction;
+
     //-----------------------------------------------------------------
 
     //--------------Start--------------------------------------------
@@ -80,9 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(IsGrounded() || isAttach)
         {
-            Debug.Log("Je suis ground");
             coyoteTimeCounter = coyoteTime;
-            //SoundFXManager.instance.PlaySoundEffectClip(landSoundClip, transform, 1f);
             animator.SetBool("Jump", false);
         }
         else
@@ -132,13 +132,26 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
-        
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         //Flip
-        if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
-        if (move.x > 0.01f) transform.localScale = new Vector3(1, 1, 1);
+
+        //if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
+        //if (move.x > 0.01f) transform.localScale = new Vector3(1, 1, 1);
+
+        if (move.x < 0f)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            direction.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (move.x > 0f) 
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            direction.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     //-----------------------------------------------------------------
@@ -152,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         rb.gravityScale = 0f;
         ghost.makeGhost = true;
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        rb.velocity = new Vector2(direction.transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
         ghost.makeGhost = false;
         rb.gravityScale = gravitySave;
@@ -203,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
         canWall = false;
         isAttach = true;
         rb.gravityScale = 0.4f;
-        rb.velocity = new Vector2(transform.localScale.x * wallSpeed, 0f);
+        rb.velocity = new Vector2(direction.transform.localScale.x * wallSpeed, 0f);
         yield return new WaitForSeconds(wallTime);
         canWall = true;
         yield break;
