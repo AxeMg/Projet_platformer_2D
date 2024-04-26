@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 //using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
@@ -43,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject direction;
 
+    public VolumeComponent volume;
+
     //-----------------------------------------------------------------
 
     //--------------Start--------------------------------------------
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+
         gravitySave = rb.gravityScale;
     }
 
