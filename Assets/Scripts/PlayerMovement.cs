@@ -165,13 +165,14 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash()
     {
-        
+        animator.SetBool("Dash", true);
         canDash = false;
         isDashing = true;
         rb.gravityScale = 0f;
         ghost.makeGhost = true;
         rb.velocity = new Vector2(direction.transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
+        animator.SetBool("Dash", false);
         ghost.makeGhost = false;
         rb.gravityScale = gravitySave;
         isDashing = false;
