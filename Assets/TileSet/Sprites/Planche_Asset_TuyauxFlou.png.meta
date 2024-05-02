@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6cc8aaf2dc06e7c4a8f8b0aa81f6cb75
+guid: 9aae395630c92cb43a83b32254480b69
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Planche_asset_background_0
+      name: Planche_Asset_TuyauxFlou_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 361
-        width: 341
-        height: 657
+        x: 162
+        y: 854
+        width: 547
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd18d16f8c4ce2479156fce9f5171ac
-      internalID: 799620636
+      spriteID: 3a5e5996a9ad87c45af41c779cc52a28
+      internalID: 1519212837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_2
+      name: Planche_Asset_TuyauxFlou_1
       rect:
         serializedVersion: 2
-        x: 474
-        y: 564
-        width: 557
-        height: 454
+        x: 1164
+        y: 810
+        width: 547
+        height: 189
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f4288f47d871884e82fe8209c86b6cc
-      internalID: 1664255096
+      spriteID: e477b7b59a0a01140987b32d61b53070
+      internalID: -107433103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_3
+      name: Planche_Asset_TuyauxFlou_2
       rect:
         serializedVersion: 2
-        x: 1062
-        y: 543
-        width: 709
-        height: 453
+        x: 115
+        y: 593
+        width: 1204
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abd4dd0f7e3411d4486ae23a909b6870
-      internalID: -507243752
+      spriteID: 2a7207360b37a8b48879d6a96570f858
+      internalID: -262549164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_4
+      name: Planche_Asset_TuyauxFlou_3
       rect:
         serializedVersion: 2
-        x: 1998
-        y: 108
-        width: 637
-        height: 721
+        x: 110
+        y: 337
+        width: 547
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f415f3abc1891a4ea2c6f29c27a2cbf
-      internalID: -2040950799
+      spriteID: 3ae6d045800f2b840befbf4b7a05b6e2
+      internalID: 1582679600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_5
+      name: Planche_Asset_TuyauxFlou_4
       rect:
         serializedVersion: 2
-        x: 517
-        y: 276
-        width: 346
-        height: 250
+        x: 839
+        y: 247
+        width: 771
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 109efed467d365f40b2c6b55c43a4260
-      internalID: -1543849841
+      spriteID: 09368b8107ec15f40a2d5937e056181d
+      internalID: 1340770830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_9
+      name: Planche_Asset_TuyauxFlou_5
       rect:
         serializedVersion: 2
-        x: 504
-        y: 282
-        width: 6
-        height: 5
+        x: 120
+        y: 71
+        width: 629
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0d24e5e1aad3b144b863a205bc0edea
-      internalID: -1628508250
+      spriteID: 58588e6bd194e234086ef5fdc1ea03ca
+      internalID: 77355040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planche_asset_background_10
+      name: Planche_Asset_TuyauxFlou_6
       rect:
         serializedVersion: 2
-        x: 76
-        y: 44
-        width: 1445
-        height: 171
+        x: 955
+        y: 49
+        width: 547
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce41551672e9e144680faad7f9a4b05a
-      internalID: -509723046
+      spriteID: fae999e7593b63344be57a9626c9bccf
+      internalID: 335443488
       vertices: []
       indices: 
       edges: []
@@ -259,7 +259,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cabfe4175697b234a9a380c5bd7a2fdc
+    spriteID: 5f11e5672e5cd4443b6105df6ab89d52
     internalID: 0
     vertices: []
     indices: 
@@ -267,17 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Planche_asset_background_0: 799620636
-      Planche_asset_background_1: -1104767801
-      Planche_asset_background_10: -509723046
-      Planche_asset_background_2: 1664255096
-      Planche_asset_background_3: -507243752
-      Planche_asset_background_4: -2040950799
-      Planche_asset_background_5: -1543849841
-      Planche_asset_background_6: -419429224
-      Planche_asset_background_7: -413124696
-      Planche_asset_background_8: -1477984915
-      Planche_asset_background_9: -1628508250
+      Planche_Asset_TuyauxFlou_0: 1519212837
+      Planche_Asset_TuyauxFlou_1: -107433103
+      Planche_Asset_TuyauxFlou_2: -262549164
+      Planche_Asset_TuyauxFlou_3: 1582679600
+      Planche_Asset_TuyauxFlou_4: 1340770830
+      Planche_Asset_TuyauxFlou_5: 77355040
+      Planche_Asset_TuyauxFlou_6: 335443488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

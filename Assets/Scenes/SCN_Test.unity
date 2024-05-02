@@ -130325,6 +130325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068323886957177605, guid: 361a7fcc0ac20ed45b9072051454f2a4,
         type: 3}
+      propertyPath: m_MaxWindowSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068323886957177605, guid: 361a7fcc0ac20ed45b9072051454f2a4,
+        type: 3}
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1486435524}
