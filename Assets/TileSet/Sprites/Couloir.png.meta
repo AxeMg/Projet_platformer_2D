@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dad6480b5ea136447b056e08fb265d50
+guid: 51338bf083d91d24ab54457b54209def
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chronologie 1_0002_0
+      name: Couloir_0
       rect:
         serializedVersion: 2
-        x: 877
-        y: 108
-        width: 214
-        height: 402
+        x: 348
+        y: 360
+        width: 554
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7d17ad87f201341830540f06c5d8f5
-      internalID: -485147630
+      spriteID: 56d301d8887a2a745a275b086c325df6
+      internalID: 581749430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Couloir_1
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 360
+        width: 257
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7aaa7e48978c344a8eea9472a2b2807
+      internalID: 949387998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Couloir_2
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 360
+        width: 140
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a18785fe0724d40a3c57ac7709f383
+      internalID: 1506237696
       vertices: []
       indices: 
       edges: []
@@ -133,7 +175,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1ab2b7aa352373d419b852f5561ca84f
+    spriteID: 479a14c006a84594d9f5202f666b3fd3
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chronologie 1_0002_0: -485147630
+      Couloir_0: 581749430
+      Couloir_1: 949387998
+      Couloir_2: 1506237696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

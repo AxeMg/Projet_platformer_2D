@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: d7ec75dfbf7a87f43b62f7f018306562
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlancheTuyaux_0
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 784
+        width: 600
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f676e2beffcfc44b793f7472c4380b
+      internalID: -674533653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 828
+        width: 540
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236cb8738cdafb44d9e4d71ab9ab2f90
+      internalID: 524643328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_22
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 568
+        width: 1225
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4da7eb6823fb8c40820d108e97d6365
+      internalID: -1188718326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_34
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 312
+        width: 572
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a72141dbbd408458acd942e6e585bc
+      internalID: 1802033132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_37
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 228
+        width: 796
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d3b0c4df35b7d4f9a5dc6ce106ac7f
+      internalID: 1689939006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_50
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 44
+        width: 653
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4081606d955c24fad2b27bb56fb54f
+      internalID: -1587019244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlancheTuyaux_56
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 24
+        width: 600
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3804347e13296e4eb715afc827abbcd
+      internalID: -2005523703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bcdff86f275e764418b64c51da075714
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlancheTuyaux_0: -674533653
+      PlancheTuyaux_1: -1777863035
+      PlancheTuyaux_10: 1347745502
+      PlancheTuyaux_11: -299840358
+      PlancheTuyaux_12: -2054526053
+      PlancheTuyaux_13: 847616313
+      PlancheTuyaux_14: 988571486
+      PlancheTuyaux_15: 1615467655
+      PlancheTuyaux_16: 824486543
+      PlancheTuyaux_17: 1688094887
+      PlancheTuyaux_18: 2056775133
+      PlancheTuyaux_19: -1669772288
+      PlancheTuyaux_2: 1862757483
+      PlancheTuyaux_20: 478702800
+      PlancheTuyaux_21: -1845848291
+      PlancheTuyaux_22: -1188718326
+      PlancheTuyaux_23: 1578522293
+      PlancheTuyaux_24: 1967972051
+      PlancheTuyaux_25: -1525138889
+      PlancheTuyaux_26: 1000233661
+      PlancheTuyaux_27: -990371759
+      PlancheTuyaux_28: 970692789
+      PlancheTuyaux_29: 984347008
+      PlancheTuyaux_3: 524643328
+      PlancheTuyaux_30: -2067847339
+      PlancheTuyaux_31: 1606924029
+      PlancheTuyaux_32: 1946887910
+      PlancheTuyaux_33: 1484166383
+      PlancheTuyaux_34: 1802033132
+      PlancheTuyaux_35: 1070401631
+      PlancheTuyaux_36: -101529166
+      PlancheTuyaux_37: 1689939006
+      PlancheTuyaux_38: -1197793259
+      PlancheTuyaux_39: -1732903453
+      PlancheTuyaux_4: 787910600
+      PlancheTuyaux_40: -196766617
+      PlancheTuyaux_41: -100178686
+      PlancheTuyaux_42: 1035927322
+      PlancheTuyaux_43: 1494670048
+      PlancheTuyaux_44: -846222560
+      PlancheTuyaux_45: 1573448537
+      PlancheTuyaux_46: -1092590573
+      PlancheTuyaux_47: -694082761
+      PlancheTuyaux_48: -690481990
+      PlancheTuyaux_49: 839451377
+      PlancheTuyaux_5: -735327130
+      PlancheTuyaux_50: -1587019244
+      PlancheTuyaux_51: -818657256
+      PlancheTuyaux_52: 1713797393
+      PlancheTuyaux_53: -850482195
+      PlancheTuyaux_54: -786134335
+      PlancheTuyaux_55: -313187177
+      PlancheTuyaux_56: -2005523703
+      PlancheTuyaux_57: 332174580
+      PlancheTuyaux_58: 2132781577
+      PlancheTuyaux_59: 71466810
+      PlancheTuyaux_6: -1624255108
+      PlancheTuyaux_60: 1353463217
+      PlancheTuyaux_7: 851288377
+      PlancheTuyaux_8: -1593185680
+      PlancheTuyaux_9: 1489162487
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

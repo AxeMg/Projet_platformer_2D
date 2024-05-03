@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dad6480b5ea136447b056e08fb265d50
+guid: 5f72053226ea0b445b36c282adbaf7b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chronologie 1_0002_0
+      name: WallRunPose_0000_1
       rect:
         serializedVersion: 2
-        x: 877
-        y: 108
-        width: 214
-        height: 402
+        x: 856
+        y: 80
+        width: 274
+        height: 435
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7d17ad87f201341830540f06c5d8f5
-      internalID: -485147630
+      spriteID: 17456b366c9efb944922d9214fc05aca
+      internalID: -265488677
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1ab2b7aa352373d419b852f5561ca84f
+    spriteID: 76892db129f59b64a8bdd1915293f9a7
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +141,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chronologie 1_0002_0: -485147630
+      WallRunPose_0000_0: 893941974
+      WallRunPose_0000_1: -265488677
+      WallRunPose_0000_2: 1472947477
+      WallRunPose_0000_3: -255745329
+      WallRunPose_0000_4: 2059544002
+      WallRunPose_0000_5: -539754483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

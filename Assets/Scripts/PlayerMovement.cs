@@ -121,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Wallride");
             StartCoroutine(Wallide());
+            animator.SetBool("Wallride", true);
         }  
     }
 
@@ -208,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Je sors du mur");
+            animator.SetBool("Wallride", false);
             isWalled = false;
             StopCoroutine(Wallide());
             rb.gravityScale = gravitySave;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dad6480b5ea136447b056e08fb265d50
+guid: 990b1ddd864307f4096bd1a4ab6196c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chronologie 1_0002_0
+      name: Statue_0
       rect:
         serializedVersion: 2
-        x: 877
-        y: 108
-        width: 214
-        height: 402
+        x: 69
+        y: 64
+        width: 228
+        height: 837
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7d17ad87f201341830540f06c5d8f5
-      internalID: -485147630
+      spriteID: 0c7fd0a99356d9a418f9918247efac42
+      internalID: 1081311264
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1ab2b7aa352373d419b852f5561ca84f
+    spriteID: a9f8b7eff2763d74b8888bc136f9b8f4
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chronologie 1_0002_0: -485147630
+      Statue_0: 1081311264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

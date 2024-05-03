@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dad6480b5ea136447b056e08fb265d50
+guid: 14873b3aaa3f4944680ec5afd1623d5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,22 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chronologie 1_0002_0
+      name: Pilliers_0
       rect:
         serializedVersion: 2
-        x: 877
-        y: 108
-        width: 214
-        height: 402
+        x: 54
+        y: 79
+        width: 416
+        height: 866
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7d17ad87f201341830540f06c5d8f5
-      internalID: -485147630
+      spriteID: 9899b4f77c411eb4db299cac10da1631
+      internalID: 580506570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pilliers_2
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 19
+        width: 220
+        height: 962
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8515d9f204be224c912590bb3e53ed1
+      internalID: 579113738
       vertices: []
       indices: 
       edges: []
@@ -133,7 +154,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1ab2b7aa352373d419b852f5561ca84f
+    spriteID: 6b9e11c37c9a88b45ae355e3f7b3e679
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +162,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chronologie 1_0002_0: -485147630
+      Pilliers_0: 580506570
+      Pilliers_1: -1174378815
+      Pilliers_2: 579113738
+      Pilliers_3: -1820044677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
