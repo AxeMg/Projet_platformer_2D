@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5feb341a1d941e4fa6a511da5704711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howClose: 10
-  bulletSpeed: 1500
+  howClose: 7
+  bulletSpeed: 1000
   fireRate: 1
   nextFire: 0
   head: {fileID: 1625925094832942765}
