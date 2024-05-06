@@ -45,7 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject direction;
 
-    public VolumeComponent volume;
+    public ParticleSystem FX_Wallride;
+    public ParticleSystem FX_Wallride1;
 
     //-----------------------------------------------------------------
 
@@ -121,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Wallride");
             StartCoroutine(Wallide());
+            FX_Wallride.Play();
+            FX_Wallride1.Play();
             animator.SetBool("Wallride", true);
         }  
     }
@@ -209,6 +212,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Je sors du mur");
+            FX_Wallride.Stop();
+            FX_Wallride1.Stop();
             animator.SetBool("Wallride", false);
             isWalled = false;
             StopCoroutine(Wallide());
