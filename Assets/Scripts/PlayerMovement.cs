@@ -141,8 +141,11 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
+        //rb.AddForce(move, 0f );
         rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+
 
         //Flip
 
