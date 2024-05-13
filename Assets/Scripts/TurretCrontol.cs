@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+//using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Turret : MonoBehaviour
 {
@@ -12,11 +13,15 @@ public class Turret : MonoBehaviour
     public float fireRate, nextFire;
     public Transform head,barrel;
     public GameObject _projectile;
+    private LineRenderer lineRenderer;
+    private ParticleSystem _particleSystem;
     Transform _Player;
 
     // Start is called before the first frame update
     void Start()
     {
+        lineRenderer = GetComponent<LineRenderer>();
+        _particleSystem = GetComponent<ParticleSystem>();
         _Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -32,7 +37,10 @@ public class Turret : MonoBehaviour
         dist = Vector2.Distance(_Player.position, transform.position);
         if (dist <= howClose ) 
         {
+            lineRenderer.enabled = true;
             head.LookAt(_Player);
+            RaycastHit2D _hit = Physics2D.Raycast(_Player.position, transform.right);
+            Draw2DRay(head.position, _hit.point);
             if(Time.time >= nextFire ) 
             {
                 nextFire = Time.time + 1f / fireRate;
@@ -41,14 +49,24 @@ public class Turret : MonoBehaviour
             }
             
         }
+        else
+        {
+            lineRenderer.enabled = false; 
+        }
     }
 
     void Shoot()
     {
+        _particleSystem.Play();
         GameObject clone = Instantiate(_projectile, barrel.position, transform.rotation);
         clone.GetComponent<Rigidbody2D>().AddForce(transform.forward * bulletSpeed);       
         Destroy(clone, 3);
     }
-    
-    
+
+    void Draw2DRay(Vector2 startPos, Vector2 endPos)
+    {
+        lineRenderer.SetPosition(0, startPos);
+        lineRenderer.SetPosition(1, endPos);
+    }
+
 }

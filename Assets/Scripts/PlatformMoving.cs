@@ -9,6 +9,8 @@ public class PlatformMoving : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int startPoint;
     [SerializeField] Transform[] points;
+    public GameObject engrenage1;
+    public GameObject engrenage2;
 
     private int i;
     private bool reverse;
