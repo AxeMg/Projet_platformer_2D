@@ -12,13 +12,19 @@ public class TriggerDeath : MonoBehaviour
         respawnPoint = transform.position;
     }
 
+    public void Death()
+    {
+        transform.position = respawnPoint;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("TriggerDeath"))
         {
-            transform.position = respawnPoint;
+            Death();
         }
-        else if(other.gameObject.CompareTag("Checkpoint"))
+
+        if(other.gameObject.CompareTag("Checkpoint"))
         {
             respawnPoint = transform.position;
         }

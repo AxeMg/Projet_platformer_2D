@@ -139,10 +139,10 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        horizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
+        //move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        horizontalMove = Input.GetAxisRaw("Horizontal") ;
         //rb.AddForce(move, 0f );
-        rb.velocity = new Vector2(move.x * Speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMove * Speed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
 
@@ -152,13 +152,13 @@ public class PlayerMovement : MonoBehaviour
         //if (move.x < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
         //if (move.x > 0.01f) transform.localScale = new Vector3(1, 1, 1);
 
-        if (move.x < 0f)
+        if (horizontalMove < 0f)
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             direction.transform.localScale = new Vector3(-1, 1, 1);
         }
-        if (move.x > 0f) 
+        if (horizontalMove > 0f) 
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
