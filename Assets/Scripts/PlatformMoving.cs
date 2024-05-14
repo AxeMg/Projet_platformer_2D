@@ -9,6 +9,8 @@ public class PlatformMoving : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int startPoint;
     [SerializeField] Transform[] points;
+
+    [SerializeField] private float rotateSpeed;
     public GameObject engrenage1;
     public GameObject engrenage2;
 
@@ -60,7 +62,11 @@ public class PlatformMoving : MonoBehaviour
 
         if(canMove)
         {
+            engrenage1.transform.Rotate(0, 0, -0.5f);
+            engrenage2.transform.Rotate(0, 0, 0.5f);
             transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
         }
+
+        
     }
 }

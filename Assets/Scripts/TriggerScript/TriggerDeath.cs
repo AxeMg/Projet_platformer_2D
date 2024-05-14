@@ -6,10 +6,15 @@ using UnityEngine.UIElements;
 public class TriggerDeath : MonoBehaviour
 {
     private Vector2 respawnPoint;
-    // Start is called before the first frame update
+    private Material glowMat;
+
+    private float apparitionAmount;
+    private float apparitionSpeed;
+
     void Start()
     {
         respawnPoint = transform.position;
+        glowMat = GetComponent<Material>();
     }
 
     public void Death()
@@ -27,6 +32,8 @@ public class TriggerDeath : MonoBehaviour
         if(other.gameObject.CompareTag("Checkpoint"))
         {
             respawnPoint = transform.position;
+           
+
         }
     }
 
