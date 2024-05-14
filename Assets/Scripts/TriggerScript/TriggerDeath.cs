@@ -6,15 +6,11 @@ using UnityEngine.UIElements;
 public class TriggerDeath : MonoBehaviour
 {
     private Vector2 respawnPoint;
-    private Material glowMat;
-
-    private float apparitionAmount;
-    private float apparitionSpeed;
 
     void Start()
     {
         respawnPoint = transform.position;
-        glowMat = GetComponent<Material>();
+
     }
 
     public void Death()

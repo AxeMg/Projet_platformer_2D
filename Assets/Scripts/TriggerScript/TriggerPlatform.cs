@@ -14,5 +14,6 @@ public class TriggerPlatform : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         platform.canMove = true;
+
     }
 }
