@@ -6,16 +6,26 @@ using UnityEngine.UIElements;
 public class TriggerDeath : MonoBehaviour
 {
     private Vector2 respawnPoint;
+    [SerializeField] private float deathTime;
+    public ParticleSystem deathFX;
+    Rigidbody2D rb;
+    Material opacity;
+    BoxCollider2D coll;
+
+
+
 
     void Start()
     {
         respawnPoint = transform.position;
-
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
+        opacity = GetComponent<SpriteRenderer>().material;
     }
 
     public void Death()
     {
-        transform.position = respawnPoint;
+        StartCoroutine(Die());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +41,20 @@ public class TriggerDeath : MonoBehaviour
            
 
         }
+    }
+
+    IEnumerator Die()
+    {
+        deathFX.Play();
+        coll.enabled = false;
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        opacity.color = new Color(1f, 1f, 1f, 0f);
+        yield return new WaitForSeconds(deathTime);
+        coll.enabled = true;
+        opacity.color = new Color(1f, 1f, 1f, 1f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        transform.position = respawnPoint;
     }
 
 }

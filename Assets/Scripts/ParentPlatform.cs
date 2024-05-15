@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ParentPlatform : MonoBehaviour
 {
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.transform.SetParent(transform);

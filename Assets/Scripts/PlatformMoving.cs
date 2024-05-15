@@ -35,7 +35,7 @@ public class PlatformMoving : MonoBehaviour
         if (Vector2.Distance(transform.position, points[i].position) < 0.01f)
         {
             canMove = false;
-
+            
             if(i == points.Length - 1)
             {
                 reverse = true;
