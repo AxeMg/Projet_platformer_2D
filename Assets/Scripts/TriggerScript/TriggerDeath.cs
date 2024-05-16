@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,17 @@ using UnityEngine.UIElements;
 public class TriggerDeath : MonoBehaviour
 {
     private Vector2 respawnPoint;
+
     [SerializeField] private float deathTime;
+
     public ParticleSystem deathFX;
+
     Rigidbody2D rb;
     Material opacity;
     BoxCollider2D coll;
 
-
-
+    [SerializeField] CinemachineImpulseSource screenShake;
+    [SerializeField] float powerAmount;
 
     void Start()
     {
@@ -38,16 +42,15 @@ public class TriggerDeath : MonoBehaviour
         if(other.gameObject.CompareTag("Checkpoint"))
         {
             respawnPoint = transform.position;
-           
-
         }
     }
 
     IEnumerator Die()
     {
+        ScreenShake();
         deathFX.Play();
         coll.enabled = false;
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         opacity.color = new Color(1f, 1f, 1f, 0f);
         yield return new WaitForSeconds(deathTime);
         coll.enabled = true;
@@ -55,6 +58,11 @@ public class TriggerDeath : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.position = respawnPoint;
+    }
+
+    public void ScreenShake()
+    {
+        screenShake.GenerateImpulse(powerAmount);
     }
 
 }

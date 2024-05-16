@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private float howClose = 10f;
     [SerializeField] private float bulletSpeed = 100f;
     public float fireRate, nextFire;
-    public Transform head,barrel;
+    public Transform head,barrel,sprite;
     public GameObject _projectile;
     private LineRenderer lineRenderer;
     private ParticleSystem _particleSystem;
@@ -39,6 +39,7 @@ public class Turret : MonoBehaviour
         {
             lineRenderer.enabled = true;
             head.LookAt(_Player);
+            SpriteRotation();
             RaycastHit2D _hit = Physics2D.Raycast(_Player.position, transform.right);
             Draw2DRay(head.position, _hit.point);
             if(Time.time >= nextFire ) 
@@ -67,6 +68,13 @@ public class Turret : MonoBehaviour
     {
         lineRenderer.SetPosition(0, startPos);
         lineRenderer.SetPosition(1, endPos);
+    }
+
+    void SpriteRotation()
+    {
+        Vector3 diff = (_Player.position - sprite.transform.position);
+        float angle = Mathf.Atan2(diff.y, diff.x);
+        sprite.transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg);
     }
 
 }

@@ -14,4 +14,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void FullscreenTog()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        Debug.Log("FULLSCREEN");
+    }
 }
