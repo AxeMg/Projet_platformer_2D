@@ -10,6 +10,7 @@ TagManager:
   - TriggerDeath
   - AntiStuckBox
   - Checkpoint
+  - TriggerCam
   layers:
   - Default
   - TransparentFX

@@ -28,7 +28,7 @@ public class ShockWaveManager : MonoBehaviour
 
     public void CallShockWave()
     {
-        _shockWaveCoroutine = StartCoroutine(shockWaveAction(0f, 1f));
+        _shockWaveCoroutine = StartCoroutine(shockWaveAction(0f, 1.2f));
     }
 
     private IEnumerator shockWaveAction(float startPos, float endPos)
