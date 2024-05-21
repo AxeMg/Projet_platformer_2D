@@ -9,6 +9,11 @@ public class LaserGun : MonoBehaviour
     public TriggerDeath triggerDeath;
     Transform m_transform;
 
+    public LayerMask myLayerMask;
+
+
+
+
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -17,27 +22,44 @@ public class LaserGun : MonoBehaviour
     private void Update()
     {
         ShootLaser();
+
+        
     }
 
     void ShootLaser()
     {
-        if (Physics2D.Raycast(m_transform.position, transform.right))
+        float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
+        Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+        /*
+        if (Physics2D.Raycast(m_transform.position, dir, defDistanceRay))
         {
-            RaycastHit2D _hit = Physics2D.Raycast(m_transform.position, transform.right);
-            Draw2DRay(laserFirePoint.position, _hit.point);
+            //RaycastHit2D _hit = Physics2D.Raycast(m_transform.position, transform.right);
+            RaycastHit2D _hit = Physics2D.Raycast(m_transform.position, dir, defDistanceRay);
+            //Draw2DRay(laserFirePoint.position, _hit.point);
 
             if ( _hit.transform.CompareTag("Player"))
             {
                 triggerDeath.Death();
             }
         }
-        else
-        {
-            Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
-        }
 
         
-
+        else
+        {
+            //Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
+            //Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right);
+            Draw2DRay(laserFirePoint.position, dir);
+        }
+        */
+        Physics2D.queriesHitTriggers = false;
+        Physics2D.Raycast(m_transform.position, dir, defDistanceRay);
+        RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir, myLayerMask);
+        Draw2DRay(laserFirePoint.position, _hit.point);
+        if (_hit.transform.CompareTag("Player"))
+        {
+            triggerDeath.Death();
+        }
 
     }
     

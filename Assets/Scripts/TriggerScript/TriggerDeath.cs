@@ -19,6 +19,8 @@ public class TriggerDeath : MonoBehaviour
     [SerializeField] CinemachineImpulseSource screenShake;
     [SerializeField] float powerAmount;
 
+    [SerializeField] private AudioClip deathSound;
+
     void Start()
     {
         respawnPoint = transform.position;
@@ -48,6 +50,7 @@ public class TriggerDeath : MonoBehaviour
     IEnumerator Die()
     {
         ScreenShake();
+        SoundFXManager.instance.PlaySoundEffectClip(deathSound, transform, 1f);
         deathFX.Play();
         coll.enabled = false;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
