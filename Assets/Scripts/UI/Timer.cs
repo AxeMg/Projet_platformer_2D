@@ -10,12 +10,13 @@ public class Timer : MonoBehaviour
 
     [SerializeField] private float timeToDisplay = 0f;
 
-    private bool _isRunning;
+    [SerializeField] private bool _isRunning = true;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        _timerText = GetComponent<TMP_Text>(); 
+        _timerText = GetComponent<TMP_Text>();
+
     }
 
     private void OnEnable()
@@ -33,10 +34,10 @@ public class Timer : MonoBehaviour
         EventManager.TimerUpdate -= EventManagerOnTimerUpdate;
     }
 
-    private void EventManagerOnTimerStart() => _isRunning = true;
+    private void EventManagerOnTimerStart() => _isRunning = false;
 
 
-    private void EventManagerOnTimerStop() => _isRunning = false;
+    private void EventManagerOnTimerStop() => _isRunning = true;
 
 
     private void EventManagerOnTimerUpdate(float value) => timeToDisplay += value;

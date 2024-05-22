@@ -34,8 +34,6 @@ public class TriggerStatueChackpoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //lights1.intensity = Mathf.Clamp(lights1.intensity * Time.deltaTime,0f,50f);
-        lights1.intensity = 50f;
-        lights1.intensity = 50f;
         StartApparition(1f);
     }
 

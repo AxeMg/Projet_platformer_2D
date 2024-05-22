@@ -238,10 +238,8 @@ MonoBehaviour:
   defDistanceRay: 100
   laserFirePoint: {fileID: 3069235049657463301}
   m_lineRenderer: {fileID: 734263426448039942}
-  triggerDeath: {fileID: 0}
-  myLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
+  triggerDeath: {fileID: 6653104023575242432, guid: d12ff56eea1efe24ca45fe93bd41e00f,
+    type: 3}
 --- !u!1 &6278087951303236168
 GameObject:
   m_ObjectHideFlags: 0

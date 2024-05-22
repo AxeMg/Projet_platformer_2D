@@ -9,11 +9,6 @@ public class LaserGun : MonoBehaviour
     public TriggerDeath triggerDeath;
     Transform m_transform;
 
-    public LayerMask myLayerMask;
-
-
-
-
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -54,7 +49,7 @@ public class LaserGun : MonoBehaviour
         */
         Physics2D.queriesHitTriggers = false;
         Physics2D.Raycast(m_transform.position, dir, defDistanceRay);
-        RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir, myLayerMask);
+        RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
         Draw2DRay(laserFirePoint.position, _hit.point);
         if (_hit.transform.CompareTag("Player"))
         {
