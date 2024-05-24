@@ -61,7 +61,7 @@ public class LaserGunBossFight : MonoBehaviour
         Physics2D.queriesHitTriggers = false;
         //Physics2D.Raycast(b_transform.position, dir, defDistanceRayBoss);
         RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
-        Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
+        //Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
         //if (_hit.transform.CompareTag("Player"))
         //{
         //    triggerDeathBoss.Death();
