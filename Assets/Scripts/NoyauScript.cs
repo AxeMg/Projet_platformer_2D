@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,28 +8,27 @@ public class NoyauScript : MonoBehaviour
 {
     public SpriteRenderer boutonY;
     public Animator animator;
+    public GameObject platformDestructible;
     Transform PlayerTransform;
     [SerializeField] private float interactDistance;
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    boutonY.enabled = true;
+    [SerializeField] CinemachineImpulseSource screenShake;
+    [SerializeField] private float powerAmount;
 
-
-        
-    //}
     void PlayAnim()
     {
         if (Vector2.Distance(PlayerTransform.position, transform.position) < interactDistance && Input.GetButtonDown("Interact"))
         {
-            boutonY.enabled = true;
-
-                Debug.Log("Je marche");
-                animator.SetBool("Interact", true);
-            
+            ScreenShake();
+            animator.SetBool("Interact", true);
+            StartCoroutine(SolDestruction());
         }
     }
-    
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        boutonY.enabled = true;
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -48,10 +48,21 @@ public class NoyauScript : MonoBehaviour
         animator.SetBool("Interact", false);
         animator.SetBool("AnimEnd", true);
     }
+    public void ScreenShake()
+    {
+        screenShake.GenerateImpulse(powerAmount);
+    }
+
 
     private void Update()
     {
         PlayAnim();
+    }
+
+    IEnumerator SolDestruction()
+    {
+        yield return new WaitForSeconds(6f);
+        platformDestructible.SetActive(false);
     }
 
 
