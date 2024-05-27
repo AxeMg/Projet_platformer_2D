@@ -207,12 +207,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defDistanceRayBoss: 100
   laserFirePointBoss: {fileID: 188832953248470026}
-  b_lineRenderer: {fileID: 8600258928959651327}
   triggerDeathBoss: {fileID: 0}
   shootCharge: 5
-  shootDuration: 5
+  shootDuration: 3
   FX_ChargeLaser1: {fileID: 3503306447425901073}
   FX_ChargeLaser2: {fileID: 588970321276878560}
+  isShooting: 0
+  canShoot: 0
 --- !u!1 &2638796703752545819
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class Turret : MonoBehaviour
     private ParticleSystem _particleSystem;
     Transform _Player;
 
+    [SerializeField] private AudioClip shootAudioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        SoundFXManager.instance.PlaySoundEffectClip(shootAudioClip, transform, 1f);
         _particleSystem.Play();
         GameObject clone = Instantiate(_projectile, barrel.position, transform.rotation);
         clone.GetComponent<Rigidbody2D>().AddForce(transform.forward * bulletSpeed);       

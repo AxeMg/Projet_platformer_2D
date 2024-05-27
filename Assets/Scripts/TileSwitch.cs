@@ -14,13 +14,13 @@ public class TileSwitch : MonoBehaviour
     [SerializeField] private bool solActive ;
     public GameObject Sol_1;
     public GameObject Sol_2;
-    AudioSource audioData;
+
+    [SerializeField] private AudioClip mechaSoundClip;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        audioData = GetComponent<AudioSource>();
         Sol_1.SetActive(true);
         Light_green.SetActive(true);
         Sol_2.SetActive(false);
@@ -64,7 +64,7 @@ public class TileSwitch : MonoBehaviour
     {
         if (Input.GetButtonDown("SwitchPlatform"))
         {
-            //SoundManagerScript.PlaySound("tileSwitchSound");
+            SoundFXManager.instance.PlaySoundEffectClip(mechaSoundClip, transform, 1f);
             shakeCamera.ScreenShake();
             Mecha();
         }

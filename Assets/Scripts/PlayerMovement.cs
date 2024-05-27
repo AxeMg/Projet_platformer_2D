@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip jumpSoundClip;
     [SerializeField] private AudioClip dashSoundClip;
     [SerializeField] private AudioClip landSoundClip;
+    
 
     public GameObject direction;
 
