@@ -207,8 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defDistanceRayBoss: 100
   laserFirePointBoss: {fileID: 188832953248470026}
+  b_lineRenderer: {fileID: 0}
   triggerDeathBoss: {fileID: 0}
-  shootCharge: 5
+  shootCharge: 2
   shootDuration: 3
   FX_ChargeLaser1: {fileID: 3503306447425901073}
   FX_ChargeLaser2: {fileID: 588970321276878560}
@@ -256,7 +257,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2638796703752545819}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -5117,7 +5118,7 @@ ParticleSystem:
   m_GameObject: {fileID: 7639203638789392631}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0

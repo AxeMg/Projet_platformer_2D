@@ -7,7 +7,7 @@ public class LaserGunBossFight : MonoBehaviour
 {
     [SerializeField] private float defDistanceRayBoss = 100;
     public Transform laserFirePointBoss;
-    private LineRenderer b_lineRenderer;
+    public LineRenderer b_lineRenderer;
     public TriggerDeath triggerDeathBoss;
     Transform b_transform;
     [SerializeField] private float shootCharge;
@@ -20,7 +20,7 @@ public class LaserGunBossFight : MonoBehaviour
     public bool canShoot;
 
 
-    private void Awake()
+    private void Start()
     {
 
         b_lineRenderer = GetComponent<LineRenderer>();
@@ -28,6 +28,12 @@ public class LaserGunBossFight : MonoBehaviour
     }
 
     private void Update()
+    {
+        Shoot();
+
+    }
+
+    private void Shoot()
     {
         if (isShooting)
         {
@@ -37,44 +43,45 @@ public class LaserGunBossFight : MonoBehaviour
             Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
             if (_hit.transform.CompareTag("Player"))
             {
-                triggerDeathBoss.Death();
+                isShooting = false;
+                triggerDeathBoss.isDead = true;
             }
         }
-
     }
 
     public IEnumerator ShootLaserBoss()
     {
-        canShoot = false;
+        //canShoot = false;
         
-        b_lineRenderer.enabled = false;
-        Debug.Log("On rentre dans la coco");
+        //b_lineRenderer.enabled = false;
+        //Debug.Log("On rentre dans la coco");
         yield return new WaitForSeconds(shootCharge);
-        b_lineRenderer.enabled = false;
-        isShooting = true;
+        //b_lineRenderer.enabled = false;
         FX_ChargeLaser1.Stop();
         FX_ChargeLaser2.Stop();
+        isShooting = true;
+        yield return new WaitForSeconds(shootDuration);
+        isShooting = false;
+        b_lineRenderer.enabled = false;
+        StopCoroutine(ShootLaserBoss());
+        
 
-        float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
-        Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        //float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
+        //Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
-        Physics2D.queriesHitTriggers = false;
+        //Physics2D.queriesHitTriggers = false;
         //Physics2D.Raycast(b_transform.position, dir, defDistanceRayBoss);
-        RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
+        //RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
         //Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
+        //yield return new WaitForSeconds(shootDuration);
         //if (_hit.transform.CompareTag("Player"))
         //{
-        //    triggerDeathBoss.Death();
+        //    triggerDeathBoss.isDead = true;
         //}
-        yield return new WaitForSeconds(shootDuration);
-        if (_hit.transform.CompareTag("Player"))
-        {
-            triggerDeathBoss.Death();
-        }
-        canShoot = true;
-        b_lineRenderer.enabled = false;
-        isShooting = false;
-        Debug.Log("On sort de la coco");
+        //canShoot = true;
+        //b_lineRenderer.enabled = false;
+        //isShooting = false;
+        //Debug.Log("On sort de la coco");
     }
 
 

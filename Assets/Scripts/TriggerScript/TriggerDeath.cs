@@ -16,6 +16,8 @@ public class TriggerDeath : MonoBehaviour
     Material opacity;
     BoxCollider2D coll;
 
+    public bool isDead;
+
     [SerializeField] CinemachineImpulseSource screenShake;
     [SerializeField] float powerAmount;
 
@@ -29,16 +31,19 @@ public class TriggerDeath : MonoBehaviour
         opacity = GetComponent<SpriteRenderer>().material;
     }
 
-    public void Death()
+    void Update()
     {
-        StartCoroutine(Die());
+        if (isDead)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("TriggerDeath"))
         {
-            Death();
+            isDead = true;
         }
 
         if(other.gameObject.CompareTag("Checkpoint"))
@@ -49,6 +54,7 @@ public class TriggerDeath : MonoBehaviour
 
     IEnumerator Die()
     {
+        isDead = false;
         ScreenShake();
         SoundFXManager.instance.PlaySoundEffectClip(deathSound, transform, 1f);
         deathFX.Play();
@@ -61,6 +67,7 @@ public class TriggerDeath : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.position = respawnPoint;
+        
     }
 
     public void ScreenShake()

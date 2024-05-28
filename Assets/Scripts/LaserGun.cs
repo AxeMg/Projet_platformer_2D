@@ -53,7 +53,7 @@ public class LaserGun : MonoBehaviour
         Draw2DRay(laserFirePoint.position, _hit.point);
         if (_hit.transform.CompareTag("Player"))
         {
-            triggerDeath.Death();
+            triggerDeath.isDead = true;
         }
 
     }
