@@ -23,18 +23,24 @@ public class TriggerDeath : MonoBehaviour
 
     [SerializeField] private AudioClip deathSound;
 
+    //public LaserGunBossFight laserBoss;
+    [SerializeField] private Transform[] listeLaser;
+
     void Start()
     {
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         opacity = GetComponent<SpriteRenderer>().material;
+        
     }
 
     void Update()
     {
+
         if (isDead)
         {
+            //laserBoss.b_lineRenderer.enabled = false;
             StartCoroutine(Die());
         }
     }
@@ -67,12 +73,24 @@ public class TriggerDeath : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.position = respawnPoint;
-        
+        //ListLaser();
     }
 
     public void ScreenShake()
     {
         screenShake.GenerateImpulse(powerAmount);
     }
+
+    //public void ListLaser()
+    //{
+        
+        
+    //        foreach(var Laser in listeLaser)
+    //        {
+    //            Debug.Log("sdfsefzedfqzsd");
+    //            Laser.GetComponent<LaserGunBossFight>().CantShoot();
+    //        }
+        
+    //}
 
 }

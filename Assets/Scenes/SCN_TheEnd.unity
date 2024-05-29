@@ -528,7 +528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Thanks to my professor and my comrads
+  m_text: Thanks to my professor and my classmates
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0550b2eaac96ce74e8c0d901da3a970f, type: 2}
   m_sharedMaterial: {fileID: -3648970085678970250, guid: 0550b2eaac96ce74e8c0d901da3a970f,
@@ -771,7 +771,7 @@ RectTransform:
   m_GameObject: {fileID: 831491565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8775824, y: 2.4757683, z: 1.8775824}
+  m_LocalScale: {x: 2.4106398, y: 2.4757683, z: 1.8775824}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147436586}
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b18da24d1e4b63428bf0d43e95e8672, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 896210de60faf0c4e8f81a5e37c0e0db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

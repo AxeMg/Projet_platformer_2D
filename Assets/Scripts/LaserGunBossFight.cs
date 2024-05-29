@@ -17,7 +17,6 @@ public class LaserGunBossFight : MonoBehaviour
     public ParticleSystem FX_ChargeLaser2;
 
     public bool isShooting;
-    public bool canShoot;
 
 
     private void Start()
@@ -25,6 +24,12 @@ public class LaserGunBossFight : MonoBehaviour
 
         b_lineRenderer = GetComponent<LineRenderer>();
         b_transform = GetComponent<Transform>();
+    }
+
+    public void OnEnable()
+    {
+        isShooting = false;
+        b_lineRenderer.enabled = false;
     }
 
     private void Update()
@@ -43,45 +48,26 @@ public class LaserGunBossFight : MonoBehaviour
             Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
             if (_hit.transform.CompareTag("Player"))
             {
-                isShooting = false;
+                //isShooting = false;
+                //b_lineRenderer.enabled = false;
                 triggerDeathBoss.isDead = true;
+                //StopCoroutine(ShootLaserBoss());
             }
         }
     }
 
     public IEnumerator ShootLaserBoss()
     {
-        //canShoot = false;
-        
-        //b_lineRenderer.enabled = false;
         //Debug.Log("On rentre dans la coco");
         yield return new WaitForSeconds(shootCharge);
-        //b_lineRenderer.enabled = false;
         FX_ChargeLaser1.Stop();
         FX_ChargeLaser2.Stop();
         isShooting = true;
         yield return new WaitForSeconds(shootDuration);
-        isShooting = false;
         b_lineRenderer.enabled = false;
+        isShooting = false;
         StopCoroutine(ShootLaserBoss());
         
-
-        //float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
-        //Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-        //Physics2D.queriesHitTriggers = false;
-        //Physics2D.Raycast(b_transform.position, dir, defDistanceRayBoss);
-        //RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
-        //Draw2DRayBoss(laserFirePointBoss.position, _hit.point);
-        //yield return new WaitForSeconds(shootDuration);
-        //if (_hit.transform.CompareTag("Player"))
-        //{
-        //    triggerDeathBoss.isDead = true;
-        //}
-        //canShoot = true;
-        //b_lineRenderer.enabled = false;
-        //isShooting = false;
-        //Debug.Log("On sort de la coco");
     }
 
 
@@ -102,6 +88,15 @@ public class LaserGunBossFight : MonoBehaviour
     public void CantShoot()
     {
         StopCoroutine(ShootLaserBoss());
+
     }
+
+    public void ResetVar()
+    {
+        b_lineRenderer.enabled = false;
+        isShooting = false;
+    }
+
+
 
 }

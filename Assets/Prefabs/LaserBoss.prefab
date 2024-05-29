@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1407517696742748325}
   - component: {fileID: 8600258928959651327}
   - component: {fileID: 5932757098732439954}
+  - component: {fileID: 1190532001812338967}
+  - component: {fileID: 1810320369165471930}
   m_Layer: 0
   m_Name: LaserGun
   m_TagString: TriggerDeath
@@ -209,12 +211,71 @@ MonoBehaviour:
   laserFirePointBoss: {fileID: 188832953248470026}
   b_lineRenderer: {fileID: 0}
   triggerDeathBoss: {fileID: 0}
-  shootCharge: 2
+  shootCharge: 1.5
   shootDuration: 3
   FX_ChargeLaser1: {fileID: 3503306447425901073}
   FX_ChargeLaser2: {fileID: 588970321276878560}
   isShooting: 0
-  canShoot: 0
+--- !u!114 &1190532001812338967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823983583547393259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ae2eef01c4ba86244b30b362e64b7525, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5932757098732439954}
+          m_TargetAssemblyTypeName: LaserGunBossFight, Assembly-CSharp
+          m_MethodName: CantShoot
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1810320369165471930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823983583547393259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 80db42e6372248445b4c327c3f810558, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5932757098732439954}
+          m_TargetAssemblyTypeName: LaserGunBossFight, Assembly-CSharp
+          m_MethodName: ResetVar
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2638796703752545819
 GameObject:
   m_ObjectHideFlags: 0
