@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start_Menu.unity
     guid: de3cf51c415f8fd489473b514677391b
   - enabled: 1
+    path: "Assets/Scenes/SCN_Cin\xE9matiqueIntro.unity"
+    guid: f0a27dac8a4c6fe45a94384f1e383644
+  - enabled: 1
     path: Assets/Scenes/SCN_Finale.unity
     guid: 46fbf551b3a19084384be54628727c59
   - enabled: 1

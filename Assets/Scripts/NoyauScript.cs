@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NoyauScript : MonoBehaviour
 {
-    public SpriteRenderer boutonY;
+    public GameObject boutonY;
     public Animator animator;
     public GameObject platformDestructible;
     Transform PlayerTransform;
@@ -27,18 +27,18 @@ public class NoyauScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        boutonY.enabled = true;
+        boutonY.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        boutonY.enabled = false;
+        boutonY.SetActive(false);
     } 
 
     // Start is called before the first frame update
     void Start()
     {
-        boutonY.enabled = false;
+        boutonY.SetActive(false);
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

@@ -8,6 +8,7 @@ public class TriggerPlatform : MonoBehaviour
     public BoxCollider2D murDroite;
     public BoxCollider2D murGauche;
 
+
     private void Start()
     {
         platform = GetComponent<PlatformMoving>();

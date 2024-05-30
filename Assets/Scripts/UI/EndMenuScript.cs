@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EndMenuScript : MonoBehaviour
 {
-    public void ContinueButton()
+    void Update()
     {
-        SceneManager.LoadScene("Start_Menu");
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene("Start_Menu");
+        }
+        
     }
 }

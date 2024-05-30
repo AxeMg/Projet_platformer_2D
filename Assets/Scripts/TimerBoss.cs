@@ -10,8 +10,10 @@ public class TimerBoss : MonoBehaviour
     private TMP_Text _timerText;
     enum TimerType { Countdown, Stopwatch }
     [SerializeField] private TimerType timerType;
+    
 
-    [SerializeField] private float timeToDisplay = 0f;
+    [SerializeField] private float timeToDisplay;
+    private float timerTypeSave;
 
     [SerializeField] private bool _isRunning = true;
 
@@ -20,6 +22,7 @@ public class TimerBoss : MonoBehaviour
     {
         _timerText = GetComponent<TMP_Text>();
         _isRunning = true;
+        timerTypeSave = timeToDisplay;
     }
 
     // Update is called once per frame
@@ -40,5 +43,12 @@ public class TimerBoss : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         _isRunning = false;
+    }
+
+    public void ResetTimer()
+    {
+        _isRunning = true;
+        timeToDisplay = timerTypeSave;
+
     }
 }

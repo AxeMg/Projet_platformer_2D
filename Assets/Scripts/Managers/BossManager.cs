@@ -15,6 +15,11 @@ public class BossManager : MonoBehaviour
     public TriggerDeath death;
     public LaserGunBossFight laser;
 
+    public TimerBoss timer;
+
+    public AudioSource music;
+    public AudioSource musicBoss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,7 @@ public class BossManager : MonoBehaviour
     {
         if(death.isDead == true)
         {
+            timer.ResetTimer();
             bossFight.time = 0;
             bossFight.Stop();
             bossFight.Evaluate();
@@ -43,6 +49,8 @@ public class BossManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         bossFight.Play();
+        music.enabled = false;
+        musicBoss.Play();
     }
 
 

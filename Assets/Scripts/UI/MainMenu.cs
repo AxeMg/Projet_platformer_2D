@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Screen.SetResolution(1920, 1080, true);
+    }
+
     public void PlayGame()
     {
-        SceneManager.LoadScene("SCN_Finale");
+        SceneManager.LoadScene("SCN_CinématiqueIntro");
     }
 
     public void QuitGame()

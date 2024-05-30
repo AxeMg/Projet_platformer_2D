@@ -17,6 +17,8 @@ public class PlatformMoving : MonoBehaviour
     private int i;
     private bool reverse;
 
+    [SerializeField] private AudioSource elevatorClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +37,8 @@ public class PlatformMoving : MonoBehaviour
         if (Vector2.Distance(transform.position, points[i].position) < 0.01f)
         {
             canMove = false;
-            
-            if(i == points.Length - 1)
+            elevatorClip.Stop();
+            if (i == points.Length - 1)
             {
                 reverse = true;
                 i--;
@@ -64,6 +66,8 @@ public class PlatformMoving : MonoBehaviour
         {
             engrenage1.transform.Rotate(0, 0, -0.5f);
             engrenage2.transform.Rotate(0, 0, 0.5f);
+            elevatorClip.Play();
+
             transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
         }
 
