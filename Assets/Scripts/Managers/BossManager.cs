@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Rendering.Universal;
 
 public class BossManager : MonoBehaviour
 {
@@ -20,11 +21,15 @@ public class BossManager : MonoBehaviour
     public AudioSource music;
     public AudioSource musicBoss;
 
+    public Light2D lightPorte;
+
     // Start is called before the first frame update
     void Start()
     {
+
         porteBas.enabled = false;
         porteHaut.enabled = false;
+        lightPorte.enabled = false;
     }
 
     // Update is called once per frame
@@ -42,6 +47,7 @@ public class BossManager : MonoBehaviour
     public void OuverturePorte()
     {
         isOpen = true;
+        lightPorte.enabled = true;
         porteBas.enabled = true;
         porteHaut.enabled = true;
     }
@@ -49,7 +55,7 @@ public class BossManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         bossFight.Play();
-        music.enabled = false;
+        music.Stop();
         musicBoss.Play();
     }
 
