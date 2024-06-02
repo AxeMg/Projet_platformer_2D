@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject optionUI;
     public PlayerMovement playerMovement;
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        optionUI.SetActive(false);
         playerMovement.enabled = true;
         Time.timeScale = 1f;
         gameIsPaused = false;

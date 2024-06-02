@@ -22,6 +22,7 @@ public class BossManager : MonoBehaviour
     public AudioSource musicBoss;
 
     public Light2D lightPorte;
+    public Animator animatorBoss;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class BossManager : MonoBehaviour
     public void OuverturePorte()
     {
         isOpen = true;
+        animatorBoss.SetBool("Dead", true);
         lightPorte.enabled = true;
         porteBas.enabled = true;
         porteHaut.enabled = true;

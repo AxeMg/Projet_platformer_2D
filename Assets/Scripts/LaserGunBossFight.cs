@@ -17,7 +17,7 @@ public class LaserGunBossFight : MonoBehaviour
     public ParticleSystem FX_ChargeLaser2;
 
     public bool isShooting;
-
+    public Animator bossAnimator;
 
     private void Start()
     {
@@ -42,6 +42,7 @@ public class LaserGunBossFight : MonoBehaviour
     {
         if (isShooting)
         {
+            
             float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
             Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             RaycastHit2D _hit = Physics2D.Raycast(transform.position, dir);
@@ -63,7 +64,9 @@ public class LaserGunBossFight : MonoBehaviour
         FX_ChargeLaser1.Stop();
         FX_ChargeLaser2.Stop();
         isShooting = true;
+        bossAnimator.SetBool("Attack", true);
         yield return new WaitForSeconds(shootDuration);
+        bossAnimator.SetBool("Attack", false);
         b_lineRenderer.enabled = false;
         isShooting = false;
         StopCoroutine(ShootLaserBoss());

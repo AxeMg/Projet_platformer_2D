@@ -13,11 +13,13 @@ public class NoyauScript : MonoBehaviour
     [SerializeField] private float interactDistance;
     [SerializeField] CinemachineImpulseSource screenShake;
     [SerializeField] private float powerAmount;
+    public GameObject bombe;
 
     void PlayAnim()
     {
         if (Vector2.Distance(PlayerTransform.position, transform.position) < interactDistance && Input.GetButtonDown("Interact"))
         {
+            bombe.SetActive(true);
             ScreenShake();
             animator.SetBool("Interact", true);
             StartCoroutine(SolDestruction());
@@ -39,6 +41,7 @@ public class NoyauScript : MonoBehaviour
     void Start()
     {
         boutonY.SetActive(false);
+        bombe.SetActive(false);
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
